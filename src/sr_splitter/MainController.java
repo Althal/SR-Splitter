@@ -101,7 +101,7 @@ public class MainController {
                             if(bid == null) break;
                             
                             String[] csvSplitted = bid.split("	");
-                            BidRecord readyBid = new BidRecord(bid, new Date(Long.parseLong(csvSplitted[3])*1000),csvSplitted[21]);
+                            BidRecord readyBid = new BidRecord(bid, new Date(Long.parseLong(csvSplitted[3])*1000 - 7200000),csvSplitted[21]);
                             //if(first)System.out.println(/*readyBid.getUserId() + " " + */csvSplitted[21]);
                             if(readyBid.getUserId().equals(clientId)) ready.add(readyBid);
                         }
